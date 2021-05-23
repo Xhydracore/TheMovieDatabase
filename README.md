@@ -1,13 +1,12 @@
-#TMDB(The Movie Database)
+# TMDB(The Movie Database)
+
 A Movie Catalogue app illustrating Android development best practices with Android Jetpack. This application are developed to fulfill Submission 1 [BAJP(Belajar Android Jetpack Pro)](https://www.dicoding.com/academies/129 "BAJP(Belajar Android Jetpack Pro)") by Dicoding
 
-##Screenshot
-![Main Menu Light](screenshot/main_light.jpg "A list of movies in Light theme")
-![Movie Details Light](screenshot/detail_light.jpg "Details for a spesific movie in Light theme")
+## Screenshot
+<img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/main_light.jpg" width="30%" height="30%"/> <img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/detail_light.jpg" width="30%" height="30%"/>
 > TMDB app UI in Light theme
 
-![Main Menu Dark](screenshot/main_dark.jpg "A list of movies in Light theme")
-![Movie Details Dark](screenshot/detail_dark.jpg "Details for a spesific movie in Light theme")
+<img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/main_dark.jpg" width="30%" height="30%"/> <img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/detail_dark.jpg" width="30%" height="30%"/>
 > TMDB app UI in Dark theme
 
 ## Libraries Used
