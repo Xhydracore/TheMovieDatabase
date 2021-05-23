@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">The Movie Database</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tvshow">TV Show</string>
+    <string name="poster">Poster</string>
+    <string name="bookmarkActivity">BookmarkActivity</string>
+    <string name="app_bar_title">TMDB</string>
+    <string name="add_bookmark" tools:keep="@string/add_bookmark">Add Bookmark</string>
+    <string name="app_icon" tools:keep="@string/app_icon">App Icon</string>
+    <string name="arrow_left" tools:keep="@string/arrow_left">Back</string>
+    <string name="vote_average" tools:keep="@string/vote_average">Vote Average</string>
+    <string name="vote_count" tools:keep="@string/vote_count">Vote Count</string>
+    <string name="overview" tools:keep="@string/overview">Overview</string>
+    <string name="upcoming_feature">UPCOMING FEATURES!! ❤</string>
+    <string name="app_bar_layout">App Bar Layout</string>
+    <string name="arrow_right">Intent Detail</string>
+</resources>

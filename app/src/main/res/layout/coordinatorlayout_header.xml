@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xhydracore.themoviedatabase.utils.CollapsibleToolbar
+    android:id="@+id/motionLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="50dp"
+    app:layoutDescription="@xml/collapsing_toolbar"
+    android:fitsSystemWindows="false"
+    app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/design_default_color_secondary"
+        android:scaleType="centerCrop"
+        android:src="@drawable/m_poster2"
+        android:contentDescription="@string/app_bar_layout" />
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:transformPivotX="8dp"
+        android:transformPivotY="0dp"
+        android:text="@string/app_bar_title"
+        style="@style/Headline1"
+        android:shadowColor="#cf1d1d"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="10" />
+</com.xhydracore.themoviedatabase.utils.CollapsibleToolbar>

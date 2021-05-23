@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/rounded_background_detail"
+    tools:keep="@layout/item_detail">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="369dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="@dimen/standard" />
+    <TextView
+        android:id="@+id/tv_title_detail"
+        style="@style/Headline2"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginEnd="@dimen/standard"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Avengers: Infinity War" />
+
+    <TextView
+        android:id="@+id/tv_release_date"
+        style="@style/Headline2"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/small"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detail"
+        tools:text="10-07-2021" />
+
+    <TextView
+        android:id="@+id/tv_genre"
+        style="@style/Headline2"
+        android:layout_width="0dp"
+        android:maxLines="2"
+        android:layout_marginTop="@dimen/small"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_release_date"
+        tools:text="Action" />
+
+    <TextView
+        android:id="@+id/tv_vote_average_title"
+        style="@style/Headline2"
+        android:layout_marginTop="@dimen/small"
+        android:text="@string/vote_average"
+        android:textColor="@color/textOnBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/tv_genre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
+
+    <RatingBar
+        android:id="@+id/rating_bar_detail"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginBottom="@dimen/extra_large"
+        android:numStars="10"
+        android:progressBackgroundTint="@color/grey_200"
+        android:progressTint="@color/red_200"
+        android:secondaryProgressTint="@color/red_500"
+        android:stepSize="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vote_average_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_vote_average_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vote_average_title"
+        tools:rating="3.3" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

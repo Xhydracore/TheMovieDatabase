@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#DB0000</color>
+    <color name="colorPrimaryDark" tools:keep="@color/colorPrimaryDark">#831010</color>
+    <color name="colorAccent" tools:keep="@color/colorAccent">#DB0000</color>
+    <color name="Background" tools:keep="@color/Background">#FFFFFF</color>
+    <color name="Error" tools:keep="@color/Error">#B00020</color>
+    <color name="OnBackground" tools:keep="@color/OnBackground">#000000</color>
+    <color name="red_200">#DB0000</color>
+    <color name="red_500">#f44336</color>
+    <color name="red_700">#831010</color>
+    <color name="grey_200">#607D8B</color>
+    <color name="grey_700">#455A64</color>
+    <color name="textOnBlack">#FFF</color>
+    <color name="textOnWhite">#000</color>
+    <color name="transparentColor" tools:keep="@color/transparentColor">#80000000</color>
+</resources>
