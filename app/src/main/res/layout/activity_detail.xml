@@ -31,11 +31,11 @@
 
                 <ImageView
                     android:id="@+id/iv_poster_detail"
-                    android:layout_width="397dp"
-                    android:layout_height="493dp"
-                    android:contentDescription="@string/arrow_left"
+                    android:layout_width="0dp"
+                    android:layout_height="500dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/poster_infinity_war"
+                    android:contentDescription="@string/arrow_left"
+                    tools:src="@drawable/poster_infinity_war"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/small"
-                android:layout_marginVertical="@dimen/standard"
+                android:layout_marginVertical="@dimen/small"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -131,14 +131,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="@dimen/standard">
 
                     <TextView
                         style="@style/Headline3"
                         android:text="@string/overview"
-                        android:textSize="20sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -147,7 +147,7 @@
                         android:layout_width="wrap_content"
                         android:layout_marginTop="@dimen/small"
                         android:textStyle="normal"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textColor="@color/textOnWhite"
                         tools:text="@tools:sample/lorem/random" />
                 </LinearLayout>

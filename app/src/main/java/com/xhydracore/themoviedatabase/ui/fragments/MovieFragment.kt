@@ -1,60 +1,52 @@
 package com.xhydracore.themoviedatabase.ui.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xhydracore.themoviedatabase.R
 import com.xhydracore.themoviedatabase.adapter.MoviesAdapter
 import com.xhydracore.themoviedatabase.databinding.FragmentMovieBinding
+import com.xhydracore.themoviedatabase.di.Injection
 import com.xhydracore.themoviedatabase.utils.DefaultItemDecorator
+import com.xhydracore.themoviedatabase.utils.ViewModelFactoryMovie
 import com.xhydracore.themoviedatabase.viewmodels.MovieViewModel
 
-class MovieFragment : Fragment() {
+class MovieFragment : Fragment(R.layout.fragment_movie) {
 
-    private var _binding: FragmentMovieBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMovieBinding.inflate(layoutInflater, container, false)
-        return binding.root
+    private val binding: FragmentMovieBinding by viewBinding()
+    private val viewModel: MovieViewModel by activityViewModels {
+        ViewModelFactoryMovie(Injection.movieInjectRepository())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (activity != null) {
-            val movieViewModel = ViewModelProvider(
-                this,
-                ViewModelProvider.NewInstanceFactory()
-            )[MovieViewModel::class.java]
-            val movies = movieViewModel.getMovies()
-            val movieAdapter = MoviesAdapter(movies)
+        setProgressVisibility(true)
+        viewModel.getMovies().observe(requireActivity()) {
             with(binding.rvMovie) {
+                layoutManager = LinearLayoutManager(requireContext())
+                adapter = MoviesAdapter(it)
+                setHasFixedSize(true)
                 addItemDecoration(
                     DefaultItemDecorator(
                         resources.getDimensionPixelSize(R.dimen.activity_horizontal_margin),
                         resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
                     )
                 )
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
-                adapter = movieAdapter
             }
+            setProgressVisibility(false)
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setProgressVisibility(state: Boolean) {
+        if (state) {
+            binding.lottieMovieSpinner.visibility = View.VISIBLE
+            binding.lottieMovieSpinner.playAnimation()
+        } else {
+            binding.lottieMovieSpinner.visibility = View.GONE
+            binding.lottieMovieSpinner.pauseAnimation()
+        }
     }
 }

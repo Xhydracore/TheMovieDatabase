@@ -25,7 +25,7 @@ class MoviesAdapter(
                 ivPoster.setRoundedGlide(movies.posterPath)
                 tvTitle.text = movies.title
                 tvReleaseDate.text = movies.releaseDate
-                circularRating.setProgress(movies.voteAverage, 100.0)
+                circularRating.setProgress(movies.voteAverage, 10.0)
                 tvOverview.text = movies.overview
             }
             itemView.setOnClickListener(

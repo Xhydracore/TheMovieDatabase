@@ -24,7 +24,7 @@ class TvShowAdapter(private var listItems: List<ResultsTvShow>) :
                 tvTitle.text = tvShows.name
                 tvReleaseDate.text = tvShows.firstAirDate
                 tvOverview.text = tvShows.overview
-                circularRating.setProgress(tvShows.voteAverage, 100.0)
+                circularRating.setProgress(tvShows.voteAverage, 10.0)
             }
             itemView.setOnClickListener(
                 CustomOnItemClickListener(

@@ -45,7 +45,7 @@
         tools:text="10-07-2021" />
 
     <TextView
-        android:id="@+id/tv_genre"
+        android:id="@+id/tv_tagline"
         style="@style/Headline2"
         android:layout_width="0dp"
         android:maxLines="2"
@@ -66,8 +66,8 @@
         android:textColor="@color/textOnBlack"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/tv_genre"
-        app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
+        app:layout_constraintStart_toStartOf="@+id/tv_tagline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tagline" />
 
     <RatingBar
         android:id="@+id/rating_bar_detail"

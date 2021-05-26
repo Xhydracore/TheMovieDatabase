@@ -3,11 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.TvShowFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tv_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_data"/>
+        tools:listitem="@layout/item_data" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieTvShowSpinner"
+        app:lottie_rawRes="@raw/loader_spinner"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:lottie_colorFilter="@color/red_200"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
