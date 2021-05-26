@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Reference/MyJetpackProSubmission" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Reference/jetpack-architecture-component" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/a129-jetpack-labs" vcs="Git" />
