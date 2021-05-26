@@ -13,7 +13,7 @@ class TvShowRepository private constructor(private val remoteRepositories: Remot
         val getInstance by lazy { TvShowRepository(RemoteRepositories.getInstance) }
     }
 
-    fun getTvShowData(): LiveData<List<ResultsTvShow>> {
+    fun getTvShowsData(): LiveData<List<ResultsTvShow>> {
         val tvShowsData = MutableLiveData<List<ResultsTvShow>>()
         remoteRepositories.getPopularTvShows(object : GetTvShowsCallback {
             override fun onResponse(responseTvShows: List<ResultsTvShow>) {

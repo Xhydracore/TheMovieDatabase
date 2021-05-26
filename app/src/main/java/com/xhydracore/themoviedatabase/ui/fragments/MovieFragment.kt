@@ -38,7 +38,7 @@ class MovieFragment : Fragment() {
                 ViewModelProvider.NewInstanceFactory()
             )[MovieViewModel::class.java]
             val movies = movieViewModel.getMovies()
-            val movieAdapter = MoviesAdapter(requireContext(), movies)
+            val movieAdapter = MoviesAdapter(movies)
             with(binding.rvMovie) {
                 addItemDecoration(
                     DefaultItemDecorator(
