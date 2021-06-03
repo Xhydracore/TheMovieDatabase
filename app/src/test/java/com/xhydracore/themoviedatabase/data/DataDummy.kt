@@ -1,9 +1,9 @@
 package com.xhydracore.themoviedatabase.data
 
-import com.xhydracore.themoviedatabase.models.movie.ResponseDetailMovie
-import com.xhydracore.themoviedatabase.models.movie.ResultsMovie
-import com.xhydracore.themoviedatabase.models.tvshow.ResponseDetailTvShow
-import com.xhydracore.themoviedatabase.models.tvshow.ResultsTvShow
+import com.xhydracore.themoviedatabase.data.remote.models.movie.ResponseDetailMovie
+import com.xhydracore.themoviedatabase.data.remote.models.movie.ResultsMovie
+import com.xhydracore.themoviedatabase.data.remote.models.tvshow.ResponseDetailTvShow
+import com.xhydracore.themoviedatabase.data.remote.models.tvshow.ResultsTvShow
 
 object DataDummy {
     fun getPopularMovieDummy(): List<ResultsMovie> {

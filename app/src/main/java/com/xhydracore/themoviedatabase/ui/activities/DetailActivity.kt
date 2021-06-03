@@ -13,8 +13,8 @@ import com.xhydracore.themoviedatabase.databinding.ActivityDetailBinding
 import com.xhydracore.themoviedatabase.di.Injection.movieInjectRepository
 import com.xhydracore.themoviedatabase.di.Injection.tvShowInjectRepository
 import com.xhydracore.themoviedatabase.ui.fragments.MovieFragment
+import com.xhydracore.themoviedatabase.ui.viewmodels.DetailViewModel
 import com.xhydracore.themoviedatabase.utils.ViewModelFactoryDetail
-import com.xhydracore.themoviedatabase.viewmodels.DetailViewModel
 
 class DetailActivity : AppCompatActivity() {
 
@@ -24,7 +24,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_DETAIL_ID = "extra_detail_id"
+        const val EXTRA_MOVIE = "extra_movie"
+        const val EXTRA_TV_SHOW = "extra_tv_show"
         const val EXTRA_TYPE = "extra_type"
     }
 

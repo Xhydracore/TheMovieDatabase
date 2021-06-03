@@ -44,7 +44,7 @@
         app:progressBackgroundColor="#121212"
         app:progressColor="#00AB08"
         app:textColor="@color/textOnBlack"
-        app:textSize="14sp" />
+        app:textSize="12sp" />
 
     <TextView
         android:id="@+id/tv_title"

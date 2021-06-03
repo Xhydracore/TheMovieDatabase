@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">The Movie Database</string>
     <string name="title_movie">Movie</string>
-    <string name="title_tvshow">TV Show</string>
+    <string name="title_tv_show">TV Show</string>
     <string name="poster">Poster</string>
     <string name="bookmarkActivity">BookmarkActivity</string>
     <string name="app_bar_title">TMDB</string>
@@ -14,4 +14,15 @@
     <string name="upcoming_feature">UPCOMING FEATURES!! ❤</string>
     <string name="app_bar_layout">App Bar Layout</string>
     <string name="arrow_right">Intent Detail</string>
+    <string name="title_activity_bookmark">BookmarkActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="bookmark_tagline"><![CDATA[Movies & Tv Show that you loved will be here]]></string>
+    <string name="welcome">Welcome,</string>
+
+    <string-array name="main_tab_title">
+        <item>@string/title_movie</item>
+        <item>@string/title_tv_show</item>
+    </string-array>
 </resources>

@@ -17,6 +17,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/m_poster2"
         android:contentDescription="@string/app_bar_layout" />
+
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
@@ -24,9 +25,14 @@
         android:transformPivotX="8dp"
         android:transformPivotY="0dp"
         android:text="@string/app_bar_title"
-        style="@style/Headline1"
-        android:shadowColor="#cf1d1d"
-        android:shadowDx="0.0"
-        android:shadowDy="0.0"
-        android:shadowRadius="10" />
+        style="@style/Headline1" />
+
+    <TextView
+        android:id="@+id/welcome_title"
+        style="@style/Headline2"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:text="@string/welcome"
+        android:layout_marginStart="@dimen/standard" />
 </com.xhydracore.themoviedatabase.utils.CollapsibleToolbar>

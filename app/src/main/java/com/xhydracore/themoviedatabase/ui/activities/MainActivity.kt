@@ -1,8 +1,8 @@
 package com.xhydracore.themoviedatabase.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         // fab intent BookMark Activity
         val fabBookmark: FloatingActionButton = binding.fabBookmarkActivity
         fabBookmark.setOnClickListener{
-            Toast.makeText(this,getString(R.string.upcoming_feature), Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, BookmarkActivity::class.java))
         }
     }
 

@@ -3,42 +3,58 @@ package com.xhydracore.themoviedatabase.ui.fragments
 import android.os.Bundle
 import android.view.View
 import android.viewbinding.library.fragment.viewBinding
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xhydracore.themoviedatabase.R
-import com.xhydracore.themoviedatabase.adapter.TvShowAdapter
 import com.xhydracore.themoviedatabase.databinding.FragmentTvshowBinding
 import com.xhydracore.themoviedatabase.di.Injection
+import com.xhydracore.themoviedatabase.ui.adapter.TvShowAdapter
+import com.xhydracore.themoviedatabase.ui.viewmodels.TvShowViewModel
 import com.xhydracore.themoviedatabase.utils.DefaultItemDecorator
 import com.xhydracore.themoviedatabase.utils.ViewModelFactoryTvShows
-import com.xhydracore.themoviedatabase.viewmodels.TvShowViewModel
+import com.xhydracore.themoviedatabase.vo.Status
 
 class TvShowFragment : Fragment(R.layout.fragment_tvshow) {
 
     private val binding: FragmentTvshowBinding by viewBinding()
     private val viewModel: TvShowViewModel by activityViewModels {
-        ViewModelFactoryTvShows(Injection.tvShowInjectRepository())
+        ViewModelFactoryTvShows(Injection.tvShowInjectRepository(requireContext()))
+    }
+    private val tvShowAdapter by lazy {
+        TvShowAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setProgressVisibility(true)
-        viewModel.getTvShows().observe(requireActivity()) {
-            with(binding.rvTvShow) {
+        with(binding) {
+            with(rvTvShow) {
                 layoutManager = LinearLayoutManager(requireContext())
-                adapter = TvShowAdapter(it)
+                adapter = tvShowAdapter
                 setHasFixedSize(true)
                 addItemDecoration(
                     DefaultItemDecorator(
-                        resources.getDimensionPixelSize(R.dimen.activity_horizontal_margin),
-                        resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
+                        resources.getDimensionPixelSize(com.xhydracore.themoviedatabase.R.dimen.activity_horizontal_margin),
+                        resources.getDimensionPixelSize(com.xhydracore.themoviedatabase.R.dimen.activity_vertical_margin)
                     )
                 )
             }
-            setProgressVisibility(false)
-        }
 
+            viewModel.getTvShows().observe(viewLifecycleOwner) {
+                when (it.status) {
+                    Status.SUCCESS -> {
+                        setProgressVisibility(false)
+                        tvShowAdapter.submitList(it.data)
+                    }
+                    Status.ERROR -> {
+                        setProgressVisibility(true)
+                        Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show()
+                    }
+                    Status.LOADING -> setProgressVisibility(true)
+                }
+            }
+        }
     }
 
     private fun setProgressVisibility(state: Boolean) {
