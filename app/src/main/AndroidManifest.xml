@@ -16,7 +16,7 @@
         <activity
             android:name=".ui.activities.BookmarkActivity"
             android:label="@string/title_activity_bookmark"
-            android:theme="@style/Theme.TheMovieDatabase.NoActionBar.NoActionBar"></activity>
+            android:theme="@style/Theme.TheMovieDatabase.NoActionBar.NoActionBar" />
         <activity android:name=".ui.activities.DetailActivity" />
         <activity
             android:name=".ui.activities.MainActivity"

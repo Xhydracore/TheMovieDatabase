@@ -35,8 +35,8 @@ class TvShowFragment : Fragment(R.layout.fragment_tvshow) {
                 setHasFixedSize(true)
                 addItemDecoration(
                     DefaultItemDecorator(
-                        resources.getDimensionPixelSize(com.xhydracore.themoviedatabase.R.dimen.activity_horizontal_margin),
-                        resources.getDimensionPixelSize(com.xhydracore.themoviedatabase.R.dimen.activity_vertical_margin)
+                        resources.getDimensionPixelSize(R.dimen.activity_horizontal_margin),
+                        resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
                     )
                 )
             }

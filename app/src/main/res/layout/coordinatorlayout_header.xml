@@ -25,6 +25,7 @@
         android:transformPivotX="8dp"
         android:transformPivotY="0dp"
         android:text="@string/app_bar_title"
+        android:textColor="@android:color/white"
         style="@style/Headline1" />
 
     <TextView
@@ -33,6 +34,8 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="22sp"
-        android:text="@string/welcome"
+        android:padding="@dimen/small"
+        android:text="@string/welcome_tagline"
+        android:textColor="@android:color/white"
         android:layout_marginStart="@dimen/standard" />
 </com.xhydracore.themoviedatabase.utils.CollapsibleToolbar>

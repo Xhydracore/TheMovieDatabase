@@ -8,7 +8,6 @@ import java.util.concurrent.Executors
 
 class AppExecutors @VisibleForTesting constructor(
     private val diskIO: Executor,
-    private val networkIO: Executor,
     private val mainThread: Executor
 ) {
     companion object {
@@ -17,13 +16,10 @@ class AppExecutors @VisibleForTesting constructor(
 
     constructor() : this(
         Executors.newSingleThreadExecutor(),
-        Executors.newFixedThreadPool(THREAD_COUNT),
         MainThreadExecutor()
     )
 
     fun diskIO(): Executor = diskIO
-
-    fun networkIO(): Executor = networkIO
 
     fun mainThread(): Executor = mainThread
 

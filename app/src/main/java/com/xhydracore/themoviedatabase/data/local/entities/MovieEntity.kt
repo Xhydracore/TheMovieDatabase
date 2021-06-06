@@ -17,13 +17,13 @@ data class MovieEntity(
     @SerializedName("id")
     val movieId: Int,
 
-    @ColumnInfo(name = "overview")
-    @SerializedName("overview")
-    val overview: String,
-
     @ColumnInfo(name = "title")
     @SerializedName("title")
     val title: String,
+
+    @ColumnInfo(name = "overview")
+    @SerializedName("overview")
+    val overview: String,
 
     @ColumnInfo(name = "genre_ids")
     @field:SerializedName("genre_ids")
@@ -33,6 +33,10 @@ data class MovieEntity(
     @SerializedName("poster_path")
     val posterPath: String,
 
+    @ColumnInfo(name = "backdrop_path")
+    @field:SerializedName("backdrop_path")
+    val backdropPath: String,
+
     @ColumnInfo(name = "release_date")
     @SerializedName("release_date")
     val releaseDate: String,
@@ -41,9 +45,9 @@ data class MovieEntity(
     @SerializedName("vote_average")
     val voteAverage: Double,
 
-    @ColumnInfo(name = "vote_count")
-    @SerializedName("vote_count")
-    val voteCount: Double,
+    @ColumnInfo(name = "original_language")
+    @SerializedName("original_language")
+    val originalLanguage: String,
 
     @ColumnInfo(name = "is_bookmark")
     var isBookmark: Boolean = false

@@ -43,12 +43,15 @@
         android:layout_marginEnd="4dp"
         app:progressBackgroundColor="#121212"
         app:progressColor="#00AB08"
-        app:textColor="@color/textOnBlack"
-        app:textSize="12sp" />
+        app:textColor="@android:color/white"
+        app:textSize="10sp"
+        app:formattingPattern="%.1f"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/tv_title"
         style="@style/Headline2"
+        android:textColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/standard"
@@ -87,6 +90,7 @@
     <TextView
         android:id="@+id/tv_overview"
         style="@style/Headline2"
+        android:textColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/standard"

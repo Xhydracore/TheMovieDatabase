@@ -1,14 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">The Movie Database</string>
     <string name="title_movie">Movie</string>
-    <string name="title_tv_show">TV Show</string>
+    <string name="title_tv_show">Tv Show</string>
     <string name="poster">Poster</string>
     <string name="bookmarkActivity">BookmarkActivity</string>
     <string name="app_bar_title">TMDB</string>
     <string name="add_bookmark" tools:keep="@string/add_bookmark">Add Bookmark</string>
     <string name="app_icon" tools:keep="@string/app_icon">App Icon</string>
     <string name="arrow_left" tools:keep="@string/arrow_left">Back</string>
-    <string name="vote_average" tools:keep="@string/vote_average">Vote Average</string>
+    <string name="vote_average" tools:keep="@string/vote_average">User Score</string>
     <string name="vote_count" tools:keep="@string/vote_count">Vote Count</string>
     <string name="overview" tools:keep="@string/overview">Overview</string>
     <string name="upcoming_feature">UPCOMING FEATURES!! ❤</string>
@@ -20,6 +20,9 @@
     <string name="bookmark">Bookmark</string>
     <string name="bookmark_tagline"><![CDATA[Movies & Tv Show that you loved will be here]]></string>
     <string name="welcome">Welcome,</string>
+    <string name="welcome_tagline">Welcome, Discover Unlimited Movies, Tv Shows, and more!</string>
+    <string name="unspecified_genre">Unspecified Genre</string>
+    <string name="image_poster">Image Poster</string>
 
     <string-array name="main_tab_title">
         <item>@string/title_movie</item>

@@ -13,7 +13,7 @@ interface TvShowDataSourceContract {
 
     fun setBookmarkTvShow(tvShowEntity: TvShowEntity, status: Boolean)
 
-    fun getBookmarkTvShow(): LiveData<PagedList<TvShowEntity>>
+    fun getBookmarkDataTvShow(): LiveData<PagedList<TvShowEntity>>
 
     fun getGenreTvShow(): LiveData<ResourceValue<List<GenreEntity>>>
 }

@@ -28,6 +28,7 @@
         android:layout_marginEnd="@dimen/standard"
         android:textSize="26sp"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +46,20 @@
         tools:text="10-07-2021" />
 
     <TextView
-        android:id="@+id/tv_tagline"
+        android:id="@+id/tv_original_language"
+        tools:text="US"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        style="@style/Headline2"
+        android:layout_marginStart="@dimen/standard"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_release_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_release_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_release_date" />
+
+    <TextView
+        android:id="@+id/tv_genre"
         style="@style/Headline2"
         android:layout_width="0dp"
         android:maxLines="2"
@@ -56,18 +70,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_release_date"
-        tools:text="Action" />
+        tools:text="Action | Comedy" />
 
     <TextView
         android:id="@+id/tv_vote_average_title"
         style="@style/Headline2"
-        android:layout_marginTop="@dimen/small"
+        android:layout_marginTop="@dimen/standard"
         android:text="@string/vote_average"
-        android:textColor="@color/textOnBlack"
         android:textSize="20sp"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/tv_tagline"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tagline" />
+        app:layout_constraintStart_toStartOf="@+id/tv_genre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
 
     <RatingBar
         android:id="@+id/rating_bar_detail"

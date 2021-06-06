@@ -17,9 +17,9 @@ class TvShowEntity(
     @SerializedName("id")
     val tvShowId: Int,
 
-    @ColumnInfo(name = "first_air_date")
-    @SerializedName("first_air_date")
-    val firstAirDate: String,
+    @ColumnInfo(name = "name")
+    @SerializedName("name")
+    val name: String,
 
     @ColumnInfo(name = "overview")
     @SerializedName("overview")
@@ -33,17 +33,17 @@ class TvShowEntity(
     @SerializedName("poster_path")
     val posterPath: String,
 
+    @ColumnInfo(name = "backdrop_path")
+    @field:SerializedName("backdrop_path")
+    val backdropPath: String,
+
+    @ColumnInfo(name = "first_air_date")
+    @SerializedName("first_air_date")
+    val firstAirDate: String,
+
     @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
     val voteAverage: Double,
-
-    @ColumnInfo(name = "name")
-    @SerializedName("name")
-    val name: String,
-
-    @ColumnInfo(name = "vote_count")
-    @SerializedName("vote_count")
-    val voteCount: Double,
 
     @ColumnInfo(name = "original_language")
     @SerializedName("original_language")

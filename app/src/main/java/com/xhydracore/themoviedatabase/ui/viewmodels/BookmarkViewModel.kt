@@ -16,5 +16,5 @@ class BookmarkViewModel(
         moviesRepository.getBookmarkDataMovie()
 
     fun getBookmarkTvShow(): LiveData<PagedList<TvShowEntity>> =
-        tvShowRepository.getBookmarkTvShow()
+        tvShowRepository.getBookmarkDataTvShow()
 }

@@ -40,6 +40,7 @@
                 <TextView
                     android:id="@+id/tv_welcome_fav"
                     style="@style/Headline2"
+                    android:textColor="@android:color/white"
                     android:text="@string/welcome"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -52,6 +53,7 @@
                     style="@style/Headline2"
                     android:text="@string/bookmark_tagline"
                     android:layout_marginTop="@dimen/small"
+                    android:textColor="@android:color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +74,7 @@
                     android:contentDescription="@string/app_icon"
                     android:clickable="true"
                     android:paddingStart="5dp"
-                    app:tint="@color/textOnBlack"
+                    app:tint="@android:color/white"
                     android:src="@drawable/ic_baseline_arrow_back_ios_24"
                     android:focusable="true"
                     tools:ignore="RtlSymmetry" />
@@ -81,7 +83,7 @@
                     style="@style/Headline1"
                     android:layout_marginStart="@dimen/large"
                     android:text="@string/bookmark"
-                    android:textColor="@color/textOnBlack"
+                    android:textColor="@android:color/white"
                     android:textSize="22sp" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -90,7 +92,7 @@
             android:id="@+id/tabs_layout_bookmark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/OnBackground"
+            android:background="@color/textOnWhite"
             app:tabIndicatorColor="@color/colorPrimary"
             app:tabSelectedTextColor="@color/colorPrimary"
             app:tabTextColor="@color/textOnBlack" />

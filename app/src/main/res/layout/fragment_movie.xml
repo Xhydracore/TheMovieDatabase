@@ -19,7 +19,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:lottie_colorFilter="@color/red_200"
-        android:visibility="gone"
+        android:visibility="invisible"
         tools:visibility="visible"
         app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"

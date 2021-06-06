@@ -4,20 +4,22 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.xhydracore.themoviedatabase.data.DataDummy
-import com.xhydracore.themoviedatabase.data.remote.models.movie.ResponseDetailMovie
-import com.xhydracore.themoviedatabase.data.remote.models.tvshow.ResponseDetailTvShow
+import com.xhydracore.themoviedatabase.data.local.entities.GenreEntity
 import com.xhydracore.themoviedatabase.data.repositories.MoviesRepository
 import com.xhydracore.themoviedatabase.data.repositories.TvShowRepository
-import org.junit.Assert.*
+import com.xhydracore.themoviedatabase.vo.ResourceValue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
+import org.junit.runner.RunWith
+import org.mockito.Mock
 import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
+import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.verify
 
 @Suppress("UNCHECKED_CAST")
+@RunWith(MockitoJUnitRunner::class)
 class DetailViewModelTest {
     private lateinit var viewModel: DetailViewModel
 
@@ -27,12 +29,20 @@ class DetailViewModelTest {
     @get:Rule
     var thrown: ExpectedException = ExpectedException.none()
 
-    private var moviesRepository = mock(MoviesRepository::class.java)
-    private var tvShowRepository = mock(TvShowRepository::class.java)
-    private var observer = mock(Observer::class.java)
+    @Mock
+    private lateinit var moviesRepository: MoviesRepository
 
-    private val idTestMovie = 399566
-    private val idTestTvShow = 791373
+    @Mock
+    private lateinit var tvShowRepository: TvShowRepository
+
+    @Mock
+    private lateinit var observer: Observer<ResourceValue<List<GenreEntity>>>
+
+    @Mock
+    private lateinit var stateObserver: Observer<Boolean>
+
+    private val idTestMovie = 529203
+    private val idTestTvShow = 82856
 
     @Before
     fun init() {
@@ -40,63 +50,48 @@ class DetailViewModelTest {
     }
 
     @Test
-    fun validateDataMovieWithId() {
-        val movieDataDummy = DataDummy.getDetailMovie(idTestMovie)
-        val moviesLiveDataMock = MutableLiveData<ResponseDetailMovie>()
-        moviesLiveDataMock.value = movieDataDummy
+    fun checkBookmarkMovie() {
+        val movieDataById = DataDummy.getPopularMovieDummy().find { it.movieId == idTestMovie }
+        val stateOnDB = MutableLiveData<Boolean>()
+        stateOnDB.value = movieDataById?.isBookmark
 
-        `when`(moviesRepository.getDetailMoviesData(idTestMovie)).thenReturn(moviesLiveDataMock)
-        viewModel.id = idTestMovie
-        assertNotNull(viewModel.getMovieDetail())
-        verify(moviesRepository).getDetailMoviesData(viewModel.id)
-        assertEquals(moviesLiveDataMock, viewModel.getMovieDetail())
-
-        viewModel.getMovieDetail().observeForever(observer as Observer<ResponseDetailMovie>)
-        verify(observer as Observer<ResponseDetailMovie>).onChanged(movieDataDummy)
+        `when`(moviesRepository.checkBookmarkMovie(idTestMovie)).thenReturn(stateOnDB)
+        viewModel.checkBookmarkMovie(idTestMovie).observeForever(stateObserver)
+        verify(stateObserver).onChanged(movieDataById?.isBookmark)
     }
 
     @Test
-    fun validateDataTvShowWithId() {
-        val tvShowDataDummy = DataDummy.getDetailTvShow(idTestTvShow)
-        val tvShowLiveDataMock = MutableLiveData<ResponseDetailTvShow>()
-        tvShowLiveDataMock.value = tvShowDataDummy
+    fun checkBookmarkTvShow() {
+        val tvShowDataById = DataDummy.getPopularTvShowDummy().find { it.tvShowId == idTestTvShow }
+        val stateOnDB = MutableLiveData<Boolean>()
+        stateOnDB.value = tvShowDataById?.isBookmark
 
-        `when`(tvShowRepository.getTvShowDetailData(idTestTvShow)).thenReturn(tvShowLiveDataMock)
-        viewModel.id = idTestTvShow
-        val getTvShowDetailData = viewModel.getTvShowDetail()
-        assertNotNull(getTvShowDetailData)
-        verify(tvShowRepository).getTvShowDetailData(viewModel.id)
-        assertEquals(tvShowLiveDataMock, getTvShowDetailData)
-
-        viewModel.getTvShowDetail().observeForever(observer as Observer<in ResponseDetailTvShow>)
-        verify(observer as Observer<ResponseDetailTvShow>).onChanged(tvShowDataDummy)
+        `when`(tvShowRepository.checkBookmarkTvShow(idTestTvShow)).thenReturn(stateOnDB)
+        viewModel.checkBookmarkTvShow(idTestTvShow).observeForever(stateObserver)
+        verify(stateObserver).onChanged(tvShowDataById?.isBookmark)
     }
 
     @Test
-    @Throws(NullPointerException::class)
-    fun invalidIdMovie() {
-        thrown.expect(java.lang.NullPointerException::class.java)
-        val movieDataDummy = DataDummy.getDetailMovie(0)
-        val moviesLiveDataMock = MutableLiveData<ResponseDetailMovie>()
-        moviesLiveDataMock.value = movieDataDummy
+    fun testGetGenreMovie() {
+        val dummy = ResourceValue.success(DataDummy.generateMovieGenre())
+        val genres = MutableLiveData<ResourceValue<List<GenreEntity>>>()
+        genres.value = dummy
 
-        thrown.expect(NullPointerException::class.java)
-        `when`(moviesRepository.getDetailMoviesData(0)).thenReturn(moviesLiveDataMock)
-        viewModel.id = 0
-        assertNull(viewModel.getMovieDetail())
+        `when`(moviesRepository.getGenreMovie()).thenReturn(genres)
+
+        viewModel.getGenreMovie().observeForever(observer)
+        verify(observer).onChanged(dummy)
     }
 
     @Test
-    @Throws(NullPointerException::class)
-    fun invalidIdTvShow() {
-        thrown.expect(NullPointerException::class.java)
-        val tvShowDataDummy = DataDummy.getDetailTvShow(0)
-        val tvShowDataLiveMock = MutableLiveData<ResponseDetailTvShow>()
-        tvShowDataLiveMock.value = tvShowDataDummy
+    fun testGetGenreTv() {
+        val dummy = ResourceValue.success(DataDummy.generateTvGenre())
+        val genres = MutableLiveData<ResourceValue<List<GenreEntity>>>()
+        genres.value = dummy
 
-        thrown.expect(NullPointerException::class.java)
-        `when`(tvShowRepository.getTvShowDetailData(0)).thenReturn(tvShowDataLiveMock)
-        viewModel.id = 0
-        assertNull(viewModel.getTvShowDetail())
+        `when`(tvShowRepository.getGenreTvShow()).thenReturn(genres)
+
+        viewModel.getGenreTvShow().observeForever(observer)
+        verify(observer).onChanged(dummy)
     }
 }

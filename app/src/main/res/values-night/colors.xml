@@ -11,7 +11,7 @@
     <color name="red_700">#831010</color>
     <color name="grey_200">#607D8B</color>
     <color name="grey_700">#455A64</color>
-    <color name="textOnWhite">#FF000000</color>
-    <color name="textOnBlack">#FFFFFFFF</color>
+    <color name="textOnBlack">#FF000000</color>
+    <color name="textOnWhite">#FFFFFFFF</color>
     <color name="transparentColor" tools:keep="@color/transparentColor">#80000000</color>
 </resources>

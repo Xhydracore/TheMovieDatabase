@@ -67,7 +67,7 @@ class TvShowRepository private constructor(
     override fun setBookmarkTvShow(tvShowEntity: TvShowEntity, status: Boolean) =
         appExecutors.diskIO().execute { localDataSource.updateTvShowFromDB(tvShowEntity, status) }
 
-    override fun getBookmarkTvShow(): LiveData<PagedList<TvShowEntity>> {
+    override fun getBookmarkDataTvShow(): LiveData<PagedList<TvShowEntity>> {
         return LivePagedListBuilder(localDataSource.getBookmarkTvShowData(), config).build()
     }
 
@@ -92,5 +92,4 @@ class TvShowRepository private constructor(
             }
         }.asLiveData()
     }
-
 }

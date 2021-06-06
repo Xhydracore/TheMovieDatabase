@@ -28,7 +28,7 @@ class MoviesRepository private constructor(
             remoteDataSource: RemoteDataSource,
             localDataSource: LocalDataSource,
             appExecutors: AppExecutors
-        ): MoviesRepository = Companion.INSTANCE ?: synchronized(this) {
+        ): MoviesRepository = INSTANCE ?: synchronized(this) {
             INSTANCE ?: MoviesRepository(remoteDataSource, localDataSource, appExecutors)
         }
     }

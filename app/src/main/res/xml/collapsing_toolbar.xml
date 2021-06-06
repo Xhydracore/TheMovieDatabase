@@ -8,9 +8,7 @@
         motion:constraintSetStart="@+id/start"
         motion:duration="1000"
         motion:motionInterpolator="linear">
-        <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:touchAnchorId="@+id/nav_host_fragment_activity_main" />
+        <OnSwipe motion:dragDirection="dragUp" />
 
     </Transition>
     <ConstraintSet android:id="@+id/end">
@@ -51,7 +49,8 @@
             android:layout_height="wrap_content"
             android:rotation="-90.0"
             motion:layout_constraintBottom_toBottomOf="@+id/background"
-            motion:layout_constraintStart_toStartOf="@id/background" />
+            motion:layout_constraintStart_toStartOf="@id/background"
+            android:visibility="invisible" />
         <Constraint
             motion:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/welcome_title"
