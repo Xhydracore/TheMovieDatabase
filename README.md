@@ -1,6 +1,6 @@
 # TMDB(The Movie Database)
 
-A Movie Catalogue app illustrating Android development best practices with Android Jetpack. This application are developed to fulfill Submission 1 [BAJP(Belajar Android Jetpack Pro)](https://www.dicoding.com/academies/129 "BAJP(Belajar Android Jetpack Pro)") by Dicoding
+A Movie Catalogue app illustrating Android development best practices with Android Jetpack. This application are developed to fulfill Submission [BAJP(Belajar Android Jetpack Pro)](https://www.dicoding.com/academies/129 "BAJP(Belajar Android Jetpack Pro)") by Dicoding
 
 ## Screenshot
 <img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/main_light.jpg" width="30%" height="30%"/> <img src="https://github.com/Xhydracore/TheMovieDatabase/blob/submission_1/screenshot/detail_light.jpg" width="30%" height="30%"/>
